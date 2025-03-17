@@ -9,8 +9,11 @@ def countcharacters():
     with open("/home/kalle/workspace/wwp2/bookbot/books/frankenstein.txt") as file:
             text = file.read().lower()
             for char in text:
-                if char in char_count:
-                    char_count[char] += 1
-                else:
-                    char_count[char] = 1
-    return char_count
+                if char.isalpha():
+                    if char in char_count:
+                        char_count[char] += 1
+                    else:
+                        char_count[char] = 1
+        
+    sorted_char = sorted(char_count.items(), key=lambda x:x[1], reverse=True)
+    return sorted_char

@@ -6,10 +6,9 @@ def main():
 from stats import countwords
 from stats import countcharacters
 
+
 wordcount = countwords()
-dictionaryofcharacters = sorted(countcharacters())
-
-
+dictionaryofcharacters = countcharacters()
 
 print((wordcount), f"words found in the document")
 print(dictionaryofcharacters)
