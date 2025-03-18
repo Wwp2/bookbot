@@ -10,5 +10,12 @@ from stats import countcharacters
 wordcount = countwords()
 dictionaryofcharacters = countcharacters()
 
-print((wordcount), f"words found in the document")
-print(dictionaryofcharacters)
+print("""
+============ BOOKBOT ============
+Analyzing book found at books/frenkenstein.txt...
+----------- Word Count ----------
+Found""", (wordcount), """total words.
+--------- Character Count -------""")
+for char, count in dictionaryofcharacters:
+    print(f"{char}: {count}")
+print("""============= END ===============""")
