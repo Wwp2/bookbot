@@ -1,12 +1,20 @@
+import sys
+
+inputwords = sys.argv
+
 def countwords():
-    with open("/home/kalle/workspace/wwp2/bookbot/books/frankenstein.txt") as f:
-        booktext = f.read()
-        words = booktext.split()
-        return(len(words))
+    try:
+        with open(inputwords[1]) as f:
+            booktext = f.read()
+            words = booktext.split()
+            return(len(words))
+    except FileNotFoundError:
+        print(f"Error: File '{inputwords[1]}' not found.")
+        return 0
     
 def countcharacters():
     char_count = {}
-    with open("/home/kalle/workspace/wwp2/bookbot/books/frankenstein.txt") as file:
+    with open(inputwords[1]) as file:
             text = file.read().lower()
             for char in text:
                 if char.isalpha():
